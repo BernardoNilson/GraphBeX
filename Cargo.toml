@@ -1,0 +1,42 @@
+[package]
+name = "graphbex"
+version = "0.1.0"
+edition = "2024"
+
+# Line tables keep panics pointing at the right line. Full debug info exhausts
+# the memory of a modest machine while linking.
+[profile.dev]
+opt-level = 1
+debug = "line-tables-only"
+
+# Bevy is too slow for large graphs without optimizations. Dependencies are
+# built optimized once and cached, so rebuilds of this crate stay fast.
+[profile.dev.package."*"]
+opt-level = 3
+
+[dependencies]
+log = "0.4"
+env_logger = "0.11"
+bevy = "0.18"
+bevy_polyline = "0.14"
+bytemuck = { version = "1", features = ["derive"] }
+crossbeam-channel = "0.5"
+image = "0.25"
+memmap2 = "0.9"
+petgraph = "0.8"
+quick-xml = "0.41"
+rand = "0.10"
+rayon = "1"
+rfd = "0.17"
+sprs = "0.11"
+# Same version Bevy uses, reading only the CPU and the memory.
+sysinfo = { version = "0.37", default-features = false, features = ["system"] }
+thiserror = "2"
+# Same version Bevy uses. With `counters`, wgpu tracks its GPU memory (VRAM).
+wgpu = { version = "27", default-features = false, features = ["counters"] }
+# Same version Bevy uses, so the icon type matches its windows.
+winit = "0.30"
+
+# Embeds the icon in the executable, where the Windows taskbar reads it.
+[target.'cfg(windows)'.build-dependencies]
+winresource = "0.1"

@@ -1,0 +1,34 @@
+# Rust
+target/
+target-cli/
+**/*.rs.bk
+*.pdb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Misc
+debug/
+dist/
+
+# Extracted sample graphs. Only the archives are versioned
+data/graph/**/*.*
+!data/graph/**/*.zip
+!data/graph/**/*.gz
+!data/graph/**/*.7z

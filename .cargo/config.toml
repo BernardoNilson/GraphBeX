@@ -1,0 +1,5 @@
+# Each rustc job compiling Bevy takes one to two gigabytes, so the default
+# parallelism exhausts the memory of a modest machine and makes the compiler
+# abort. Two jobs keep the build within reach, including the ones the IDE runs.
+[build]
+jobs = 2
