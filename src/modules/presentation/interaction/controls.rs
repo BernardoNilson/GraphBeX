@@ -156,10 +156,12 @@ impl ActionContext<'_> {
             ControlAction::OpenGraph => {
                 let channel = self.channel.0.clone();
                 thread::spawn(move || {
+                    // Absolute, because on Linux the dialog runs in the desktop portal, a process with another working directory
+                    let directory = std::fs::canonicalize(GRAPH_DIRECTORY).unwrap_or_else(|_| PathBuf::from(GRAPH_DIRECTORY));
                     let dialog = FileDialog::new()
                         .set_title("Open Graph")
                         .add_filter("Graphs", &GraphFormat::supported_extensions())
-                        .set_directory(GRAPH_DIRECTORY);
+                        .set_directory(directory);
                     if let Some(path) = dialog.pick_file() {
                         let _ = channel.send(LayoutCommand::LoadGraph(path));
                     }
