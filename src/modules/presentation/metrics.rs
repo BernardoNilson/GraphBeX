@@ -4,7 +4,7 @@
 use std::time::Duration;
 
 use bevy::prelude::*;
-use bevy::render::renderer::RenderDevice;
+use bevy::render::renderer::{RenderAdapterInfo, RenderDevice};
 use bevy::time::common_conditions::on_timer;
 use crossbeam_channel::Receiver;
 
@@ -42,10 +42,19 @@ impl Plugin for MetricsPlugin {
         app.insert_resource(HardwareChannel(self.0.clone()))
             .init_resource::<HardwareMetrics>()
             .init_resource::<GpuMemory>()
+            .add_systems(Startup, log_adapter)
             .add_systems(
                 PreUpdate,
                 (receive_hardware_samples, sample_gpu_memory.run_if(on_timer(Duration::from_secs(1)))),
             );
+    }
+}
+
+/// The GPU and graphics backend in use. Bevy logs them too, but through its own
+/// logger, which is disabled.
+fn log_adapter(adapter: Option<Res<RenderAdapterInfo>>) {
+    if let Some(info) = adapter {
+        log::info!("GPU: {} ({:?}, driver {} {})", info.name, info.backend, info.driver, info.driver_info);
     }
 }
 
