@@ -101,6 +101,84 @@ Source (citation)
 J. Leskovec, J. Kleinberg and C. Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM Transactions on Knowledge Discovery from Data (ACM TKDD), 1(1), 2007.
 M. Ripeanu and I. Foster and A. Iamnitchi. Mapping the Gnutella Network: Properties of Large-Scale Peer-to-Peer Systems and Implications for System Design. IEEE Internet Computing Journal, 2002.
 
+We encourage you to cite our datasets if you have used them in your work. You can use the following BibTeX citation:
+
+                  @misc{snapnets,
+                    author       = {Jure Leskovec and Andrej Krevl},
+                    title        = {{SNAP Datasets}: {Stanford} Large Network Dataset Collection},
+                    howpublished = {\url{http://snap.stanford.edu/data}},
+                    month        = jun,
+                    year         = 2014
+                  }
+
+### as-skitter.txt.gz
+
+Link: https://snap.stanford.edu/data/as-Skitter.html
+
+Dataset statistics:
+
+| Name | Stat |
+|----------------------------------|------------------|
+| Nodes                            | 1696415          |
+| Edges                            | 11095298         |
+| Nodes in largest WCC             | 1694616 (0.999)  |
+| Edges in largest WCC             | 11094209 (1.000) |
+| Nodes in largest SCC             | 1694616 (0.999)  |
+| Edges in largest SCC             | 11094209 (1.000) |
+| Average clustering coefficient   | 0.2581           |
+| Number of triangles              | 28769868         |
+| Fraction of closed triangles     | 0.001802         |
+| Diameter (longest shortest path) | 25               |
+| 90-percentile effective diameter | 6                |
+
+Source (citation):
+
+J. Leskovec, J. Kleinberg and C. Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2005.
+
+We encourage you to cite our datasets if you have used them in your work. You can use the following BibTeX citation:
+
+                  @misc{snapnets,
+                    author       = {Jure Leskovec and Andrej Krevl},
+                    title        = {{SNAP Datasets}: {Stanford} Large Network Dataset Collection},
+                    howpublished = {\url{http://snap.stanford.edu/data}},
+                    month        = jun,
+                    year         = 2014
+                  }
+
+### com-lj.ungraph.7z
+
+Link: https://snap.stanford.edu/data/com-LiveJournal.html
+
+Dataset statistics:
+
+| Name | Stat |
+|----------------------------------|------------------|
+| Nodes                            | 3997962          |
+| Edges                            | 34681189         |
+| Nodes in largest WCC             | 3997962 (1.000)  |
+| Edges in largest WCC             | 34681189 (1.000) |
+| Nodes in largest SCC             | 3997962 (1.000)  |
+| Edges in largest SCC             | 34681189 (1.000) |
+| Average clustering coefficient   | 0.2843           |
+| Number of triangles              | 177820130        |
+| Fraction of closed triangles     | 0.04559          |
+| Diameter (longest shortest path) | 17               |
+| 90-percentile effective diameter | 6.5              |
+
+Source (citation):
+
+J. Yang and J. Leskovec. Defining and Evaluating Network Communities based on Ground-truth. ICDM, 2012.
+
+We encourage you to cite our datasets if you have used them in your work. You can use the following BibTeX citation:
+
+                  @misc{snapnets,
+                    author       = {Jure Leskovec and Andrej Krevl},
+                    title        = {{SNAP Datasets}: {Stanford} Large Network Dataset Collection},
+                    howpublished = {\url{http://snap.stanford.edu/data}},
+                    month        = jun,
+                    year         = 2014
+                  }
+
 ## GraphML
 
 ### got-network.zip
